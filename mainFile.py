@@ -1,4 +1,4 @@
-#Authors: Austin Hale, Zenon Nowakowki
+#Authors: Austin Hale, Zenon Nowakowksi
 #Linear Algebra Final Project
 #Topic 1: Perform transformations on vectors using numpy and matplotlib in Python
 
