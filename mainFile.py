@@ -2,22 +2,45 @@
 #Linear Algebra Final Project
 #Topic 1: Perform transformations on vectors using numpy and matplotlib in Python
 
-#imports
-from math import cos, sin
 import numpy as np
 import matplotlib.pyplot as plt
+M = np.array([[1,0],[0,1],[1,1]])
+colors = ['b','r','k']
+rows,cols = M.T.shape
 
-#test plotting
-x = np.linspace(0, 2 * np.pi, 200)
-y = np.sin(x)
+for i,l in enumerate(range(0,cols)):
+    xs = [0,M[i,0]]
+    ys = [0,M[i,1]]
+    plt.plot(xs,ys)
 
-fig, ax = plt.subplots()
-ax.plot(x, y)
+plt.plot(0,0,'ok') #<-- plot a black point at the origin
+plt.axis('equal')  #<-- set the axes to the same scale
+plt.legend(['V'+str(i+1) for i in range(cols)]) #<-- give a legend
+plt.grid(b=True, which='major') #<-- plot grid lines
 plt.show()
 
-#rotation of vectors
-theta = np.deg2rad(30)
-rotation = np.array([cos(theta), -sin(theta)],[sin(theta), cos(theta)])
-v1 = np.array([1, 2])
+M *= -1 #<-- Rotation utilizing scalar transform 
 
-#scaling of vectors using scalar values
+for i,l in enumerate(range(0,cols)):
+    xs = [0,M[i,0]]
+    ys = [0,M[i,1]]
+    plt.plot(xs,ys)
+
+plt.plot(0,0,'ok') #<-- plot a black point at the origin
+plt.axis('equal')  #<-- set the axes to the same scale
+plt.legend(['V'+str(i+1) for i in range(cols)]) #<-- give a legend
+plt.grid(b=True, which='major') #<-- plot grid lines
+plt.show()
+
+M *= 3 #<-- Scalar transform 
+
+for i,l in enumerate(range(0,cols)):
+    xs = [0,M[i,0]]
+    ys = [0,M[i,1]]
+    plt.plot(xs,ys)
+
+plt.plot(0,0,'ok') #<-- plot a black point at the origin
+plt.axis('equal')  #<-- set the axes to the same scale
+plt.legend(['V'+str(i+1) for i in range(cols)]) #<-- give a legend
+plt.grid(b=True, which='major') #<-- plot grid lines
+plt.show()
